@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getLeaderboards } from '../lib/leaderboard';
+
+const {data:leaderboards,error} = await getLeaderboards();
 ---
 
 <Layout>
@@ -8,13 +11,12 @@ import Layout from '../layouts/Layout.astro';
         <p>or</p>
         <p>Create board</p>
         <ul class="flex flex-col gap-32">
-            <!-- {leaderboards.map((board) =>
+            {leaderboards?.map((board) =>
                 <li class="border border-neutral-stroke-rest rounded-lg p-16">
                     <p>{board.name}</p>
-                    <p>50 members</p>
+                    <p>{board.members.length} members</p>
                 </li>
-            )} -->
-
+            )}
         </ul>
     </main>
 </Layout>
