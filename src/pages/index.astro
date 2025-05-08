@@ -5,9 +5,6 @@ import Layout from '../layouts/Layout.astro';
 import { getLeaderBoards,transport } from '../lib';
 
 // let leaderboards = await getLeaderBoards();
-let client = new AuthClient(transport)
-let response = await client.signInAnonymously(Empty).response;
-console.log(response)
 ---
 
 <Layout>
