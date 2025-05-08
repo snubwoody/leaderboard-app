@@ -1,0 +1,42 @@
+
+@theme{
+
+    /* Reset all colors */
+    --color-*: initial;
+
+    /* Raw colors */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    --color-neutral-50: hsl(0, 0%, 0%, 2%);
+    --color-neutral-100: hsl(0, 0%, 0%, 5%);
+    --color-neutral-200: hsl(0, 0%, 0%, 10%);
+    --color-neutral-300: hsl(0, 0%, 0%, 20%);
+    --color-neutral-400: hsl(0, 0%, 0%, 30%);
+    --color-neutral-500: hsl(0, 0%, 0%, 50%);
+    --color-neutral-600: hsl(0, 0%, 0%, 60%);
+    --color-neutral-700: hsl(0, 0%, 0%, 70%);
+    --color-neutral-800: hsl(0, 0%, 0%, 80%);
+    --color-neutral-900: hsl(0, 0%, 0%, 85%);
+    --color-neutral-950: hsl(0, 0%, 0%, 90%);
+
+    --color-brand-50: #DCF8FE;
+    --color-brand-100: #BEF2FD;
+    --color-brand-200: #79E4FC;
+    --color-brand-300: #38D7FA;
+    --color-brand-400: #06C0EA;
+    --color-brand-500: #048BA8;
+    --color-brand-600: #036E86;
+    --color-brand-700: #025264;
+    --color-brand-800: #023541;
+    --color-brand-900: #011D23;
+    --color-brand-950: #000C0F;
+
+    /* Semantic colors */
+    --color-brand-background-rest: var(--color-brand-500);
+    --color-brand-foreground-on-brand: var(--color-white);
+
+    --color-neutral-stroke-rest: var(--color-neutral-100);
+    --color-neutral-stroke-hover: var(--color-neutral-200);
+    --color-neutral-stroke-clicked: var(--color-neutral-300);
+}

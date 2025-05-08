@@ -1,0 +1,17 @@
+syntax = "proto3";
+package auth;
+import "common.proto";
+
+service Auth{
+    rpc SignInAnonymously(common.Empty) returns (User);
+}
+
+message User {
+    string id = 1;
+    optional string email = 2;
+    // The date the user was created
+    string created_at = 3;
+    optional string user_name = 4;
+    optional string phone_number = 6;
+    bool is_anonymous = 7;
+}

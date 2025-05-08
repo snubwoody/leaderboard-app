@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { AuthClient } from '../generated/auth.client';
+import { Empty } from '../generated/common';
 import Layout from '../layouts/Layout.astro';
+import { getLeaderBoards,transport } from '../lib';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// let leaderboards = await getLeaderBoards();
+let client = new AuthClient(transport)
+let response = await client.signInAnonymously(Empty).response;
+console.log(response)
 ---
 
 <Layout>
-	<Welcome />
+    <main class="flex flex-col items-center justify-center w-full h-full gap-16">
+        <p>Join board</p>
+        <p>or</p>
+        <p>Create board</p>
+        <ul class="flex flex-col gap-32">
+            <!-- {leaderboards.map((board) =>
+                <li class="border border-neutral-stroke-rest rounded-lg p-16">
+                    <p>{board.name}</p>
+                    <p>50 members</p>
+                </li>
+            )} -->
+
+        </ul>
+    </main>
 </Layout>
