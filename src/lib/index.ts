@@ -1,26 +1,6 @@
-import { GrpcWebFetchTransport } from "@protobuf-ts/grpcweb-transport";
-import { AuthClient } from "../generated/auth.client";
-import { Empty } from "../generated/common";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-export const api = "http://localhost:5000"
+const supabaseUrl = "https://dosxdaotjfpvzkktsddu.supabase.co"
+const anonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRvc3hkYW90amZwdnpra3RzZGR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0ODE3MjIsImV4cCI6MjA2MjA1NzcyMn0.I7bECpX2Q3tdVNXjoBb5JzIlR9RufWuwCURtTqyAQiA";
 
-export type Leaderboard = {
-    id: number,
-    name: string
-}
-
-export const getLeaderBoards = async() => {
-    const response = await fetch(`${api}/api/v1/leaderboards`);
-    const leaderboards: Leaderboard[] = await response.json() 
-    return leaderboards
-}
-
-export const transport = new GrpcWebFetchTransport({
-    baseUrl: "http://localhost:5000"
-})
-let client = new AuthClient(transport);
-
-export {
-    client
-};
-
+export const supabase = createClient(supabaseUrl,anonKey)
